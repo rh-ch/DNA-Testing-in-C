@@ -40,19 +40,16 @@ int main() {
     for (i = 0; i < n; ++i) {
         fscanf(fp, "%s", candidates[i]);
         
-       
         if (strcmp(sample, candidates[i]) == 0) {
             printf("Candidate %d is a perfect match.\n", i + 1);
             fclose(fp);
             return 0;
         }
         
-       
         scores[i] = calculate_score(sample, candidates[i]);
     }
     
     fclose(fp);
-    
     
     int best_index = 0;
     int highest_score = scores[0];
